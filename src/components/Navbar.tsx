@@ -31,7 +31,7 @@ const Navbar = () => {
             'transition-all duration-300',
             scrolled ? 'text-base' : 'text-lg'
           )}>
-            KO6HJJ
+            KB0RB
           </span>
         </Link>
         

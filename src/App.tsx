@@ -15,7 +15,7 @@ const queryClient = new QueryClient();
 const App = () => {
   // Set initial theme based on local storage or system preference
   useEffect(() => {
-    const storedTheme = localStorage.getItem('ko6hjj-theme');
+    const storedTheme = localStorage.getItem('kb0rb-theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     const initialTheme = storedTheme 

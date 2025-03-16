@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-6 md:mb-0">
             <Radio className="w-5 h-5 text-primary" />
-            <span className="font-semibold text-lg">KO6HJJ</span>
+            <span className="font-semibold text-lg">KB0RB</span>
           </div>
           
           <div className="flex space-x-10 mb-6 md:mb-0">
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-foreground/50">
-            © {currentYear} Jon / KO6HJJ
+            © {currentYear} Jon / KB0RB
           </div>
         </div>
         

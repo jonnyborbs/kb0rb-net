@@ -41,7 +41,7 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight intersection-observer-trigger animate-fade-in-up"
             style={{ animationDelay: '100ms' }}
           >
-            I'm Jon <span className="text-primary">(KO6HJJ)</span>
+            I'm Jon <span className="text-primary">(KB0RB)</span>
           </h1>
           
           <p 
@@ -74,7 +74,7 @@ const HeroSection = () => {
           >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
-              alt="Jon (KO6HJJ) at his HAM radio station" 
+              alt="Jon (KB0RB) at his HAM radio station" 
               className="w-full h-auto rounded-xl"
             />
           </div>
@@ -103,7 +103,7 @@ const HeroSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Amateur (Extra)</p>
-                      <p className="font-medium">KO6HJJ</p>
+                      <p className="font-medium">KB0RB</p>
                     </div>
                   </div>
                   
@@ -188,7 +188,7 @@ const HeroSection = () => {
           >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
-              alt="Jon (KO6HJJ) at his HAM radio station" 
+              alt="Jon (KB0RB) at his HAM radio station" 
               className="w-full h-auto rounded-xl"
             />
           </div>
