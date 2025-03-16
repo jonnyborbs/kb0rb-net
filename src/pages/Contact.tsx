@@ -78,6 +78,21 @@ const Contact = () => {
                   
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
+                      <Mail className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <a 
+                        href="mailto:qso@kb0rb.net" 
+                        className="font-medium text-xl hover:text-primary flex items-center"
+                      >
+                        qso@kb0rb.net <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
                       <ExternalLink className="w-6 h-6" />
                     </div>
                     <div>
