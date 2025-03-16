@@ -38,19 +38,21 @@ const HeroSection = () => {
           
           <h1 
             ref={titleRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight intersection-observer-trigger"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight intersection-observer-trigger animate-fade-in-up"
+            style={{ animationDelay: '100ms' }}
           >
             I'm Jon <span className="text-primary">(KB0RB)</span>
           </h1>
           
           <p 
             ref={subtitleRef}
-            className="text-xl md:text-2xl text-foreground/80 max-w-2xl"
+            className="text-xl md:text-2xl text-foreground/80 max-w-2xl intersection-observer-trigger animate-fade-in-up"
+            style={{ animationDelay: '200ms' }}
           >
             Based in Vacaville, California, continuing a family tradition of HAM radio across generations.
           </p>
           
-          <div className="flex space-x-4 pt-4 intersection-observer-trigger">
+          <div className="flex space-x-4 pt-4 intersection-observer-trigger animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <a 
               href="#about" 
               className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -67,7 +69,8 @@ const HeroSection = () => {
           
           <div 
             ref={imageRef}
-            className="mt-8 lg:hidden intersection-observer-trigger rounded-xl overflow-hidden shadow-lg"
+            className="mt-8 lg:hidden intersection-observer-trigger animate-fade-in-up rounded-xl overflow-hidden shadow-lg"
+            style={{ animationDelay: '400ms' }}
           >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
@@ -80,7 +83,8 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 gap-6">
           <div
             ref={cardRef}
-            className="intersection-observer-trigger"
+            className="intersection-observer-trigger animate-slide-in-right"
+            style={{ animationDelay: '400ms' }}
           >
             <Card className="glassy-card overflow-hidden">
               <CardHeader className="pb-3">
@@ -178,7 +182,8 @@ const HeroSection = () => {
           </div>
           
           <div 
-            className="hidden lg:block intersection-observer-trigger rounded-xl overflow-hidden shadow-lg"
+            className="hidden lg:block intersection-observer-trigger animate-slide-in-right rounded-xl overflow-hidden shadow-lg"
+            style={{ animationDelay: '500ms' }}
             ref={useRef<HTMLDivElement>(null)}
           >
             <img 
