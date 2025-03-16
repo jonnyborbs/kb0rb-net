@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Radio, Signal, Globe, Mail } from 'lucide-react';
+import { Radio, Signal, Globe, Mail, ExternalLink } from 'lucide-react';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 const Contact = () => {
@@ -73,6 +73,23 @@ const Contact = () => {
                     <div>
                       <p className="text-sm text-muted-foreground">DMR</p>
                       <p className="font-medium text-xl">3213970</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
+                      <ExternalLink className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">QRZ Profile</p>
+                      <a 
+                        href="https://www.qrz.com/db/kb0rb" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="font-medium text-xl hover:text-primary flex items-center"
+                      >
+                        KB0RB <ExternalLink className="w-4 h-4 ml-1" />
+                      </a>
                     </div>
                   </div>
                   
