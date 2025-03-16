@@ -178,8 +178,7 @@ const HeroSection = () => {
           </div>
           
           <div 
-            className="hidden lg:block intersection-observer-trigger animate-slide-in-right rounded-xl overflow-hidden shadow-lg"
-            style={{ animationDelay: '500ms' }}
+            className="hidden lg:block intersection-observer-trigger rounded-xl overflow-hidden shadow-lg"
             ref={useRef<HTMLDivElement>(null)}
           >
             <img 
