@@ -52,7 +52,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Amateur (Extra)</p>
-                      <p className="font-medium text-xl">KO6HJJ</p>
+                      <p className="font-medium text-xl">KB0RB</p>
                     </div>
                   </div>
                   
