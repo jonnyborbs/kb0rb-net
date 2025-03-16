@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Signal } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,17 +35,20 @@ const Navbar = () => {
           </span>
         </Link>
         
-        <nav className="flex items-center space-x-8">
-          <Link to="/" className="text-foreground/80 hover:text-primary transition-colors">
-            Home
-          </Link>
-          <Link to="/equipment" className="text-foreground/80 hover:text-primary transition-colors">
-            Equipment
-          </Link>
-          <Link to="/contact" className="text-foreground/80 hover:text-primary transition-colors">
-            Contact
-          </Link>
-        </nav>
+        <div className="flex items-center space-x-4">
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-foreground/80 hover:text-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/equipment" className="text-foreground/80 hover:text-primary transition-colors">
+              Equipment
+            </Link>
+            <Link to="/contact" className="text-foreground/80 hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
