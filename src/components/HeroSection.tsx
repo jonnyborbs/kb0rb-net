@@ -36,11 +36,19 @@ const HeroSection = () => {
             <Signal className="w-4 h-4 mr-2" /> Amateur Radio Operator
           </div>
           
-          <h1>
+          <h1 
+            ref={titleRef}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight intersection-observer-trigger animate-fade-in-up"
+            style={{ animationDelay: '100ms' }}
+          >
             I'm Jon <span className="text-primary">(KB0RB)</span>
           </h1>
           
-          <p>
+          <p 
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-foreground/80 max-w-2xl intersection-observer-trigger animate-fade-in-up"
+            style={{ animationDelay: '200ms' }}
+          >
             Based in Vacaville, California, continuing a family tradition of HAM radio across generations.
           </p>
           
@@ -59,7 +67,11 @@ const HeroSection = () => {
             </a>
           </div>
           
-          <div>
+          <div 
+            ref={imageRef}
+            className="mt-8 lg:hidden intersection-observer-trigger animate-fade-in-up rounded-xl overflow-hidden shadow-lg"
+            style={{ animationDelay: '400ms' }}
+          >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
               alt="Jon (KB0RB) at his HAM radio station" 
@@ -69,7 +81,11 @@ const HeroSection = () => {
         </div>
         
         <div className="grid grid-cols-1 gap-6">
-          <div>
+          <div
+            ref={cardRef}
+            className="intersection-observer-trigger animate-slide-in-right"
+            style={{ animationDelay: '400ms' }}
+          >
             <Card className="glassy-card overflow-hidden">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
