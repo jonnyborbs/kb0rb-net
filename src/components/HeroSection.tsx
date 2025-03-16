@@ -11,6 +11,7 @@ const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   
   const { observe } = useIntersectionObserver({
     threshold: 0.1,
@@ -21,6 +22,7 @@ const HeroSection = () => {
     if (titleRef.current) observe(titleRef.current);
     if (cardRef.current) observe(cardRef.current);
     if (subtitleRef.current) observe(subtitleRef.current);
+    if (imageRef.current) observe(imageRef.current);
   }, [observe]);
 
   return (
@@ -64,74 +66,100 @@ const HeroSection = () => {
               My Equipment
             </a>
           </div>
+          
+          <div 
+            ref={imageRef}
+            className="mt-8 lg:hidden intersection-observer-trigger animate-fade-in-up rounded-xl overflow-hidden shadow-lg"
+            style={{ animationDelay: '400ms' }}
+          >
+            <img 
+              src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
+              alt="Jon (KO6HJJ) at his HAM radio station" 
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
         </div>
         
-        <div
-          ref={cardRef}
-          className="intersection-observer-trigger animate-slide-in-right"
-          style={{ animationDelay: '400ms' }}
-        >
-          <Card className="glassy-card overflow-hidden">
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-2xl font-semibold">Contact Details</CardTitle>
-                <Radio className="h-5 w-5 text-primary" />
-              </div>
-              <CardDescription>Find me on the airwaves</CardDescription>
-            </CardHeader>
-            
-            <CardContent className="space-y-6">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
-                    <Radio className="w-5 h-5" />
+        <div className="grid grid-cols-1 gap-6">
+          <div
+            ref={cardRef}
+            className="intersection-observer-trigger animate-slide-in-right"
+            style={{ animationDelay: '400ms' }}
+          >
+            <Card className="glassy-card overflow-hidden">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-2xl font-semibold">Contact Details</CardTitle>
+                  <Radio className="h-5 w-5 text-primary" />
+                </div>
+                <CardDescription>Find me on the airwaves</CardDescription>
+              </CardHeader>
+              
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+                      <Radio className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Amateur (Extra)</p>
+                      <p className="font-medium">KO6HJJ</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Amateur (Extra)</p>
-                    <p className="font-medium">KO6HJJ</p>
+                  
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+                      <Signal className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">GMRS</p>
+                      <p className="font-medium">WSGQ342</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">DMR</p>
+                      <p className="font-medium">3213970</p>
+                    </div>
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
-                    <Signal className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">GMRS</p>
-                    <p className="font-medium">WSGQ342</p>
-                  </div>
-                </div>
+                <Separator />
                 
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
-                    <Globe className="w-5 h-5" />
+                <div>
+                  <div className="flex items-center mb-2">
+                    <MessageSquare className="w-4 h-4 mr-2 text-muted-foreground" />
+                    <span className="text-sm font-medium">Memberships</span>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">DMR</p>
-                    <p className="font-medium">3213970</p>
-                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    ARRL • Vaca Valley Radio Club • Sac Valley Mesh
+                  </p>
                 </div>
-              </div>
+              </CardContent>
               
-              <Separator />
-              
-              <div>
-                <div className="flex items-center mb-2">
-                  <MessageSquare className="w-4 h-4 mr-2 text-muted-foreground" />
-                  <span className="text-sm font-medium">Memberships</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  ARRL • Vaca Valley Radio Club • Sac Valley Mesh
+              <CardFooter className="bg-muted/50 py-3">
+                <p className="text-xs text-center w-full text-muted-foreground">
+                  I'm always looking to chat with new folks and learn new things!
                 </p>
-              </div>
-            </CardContent>
-            
-            <CardFooter className="bg-muted/50 py-3">
-              <p className="text-xs text-center w-full text-muted-foreground">
-                I'm always looking to chat with new folks and learn new things!
-              </p>
-            </CardFooter>
-          </Card>
+              </CardFooter>
+            </Card>
+          </div>
+          
+          <div 
+            className="hidden lg:block intersection-observer-trigger animate-slide-in-right rounded-xl overflow-hidden shadow-lg"
+            style={{ animationDelay: '500ms' }}
+            ref={useRef<HTMLDivElement>(null)}
+          >
+            <img 
+              src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
+              alt="Jon (KO6HJJ) at his HAM radio station" 
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
         </div>
       </div>
     </section>
