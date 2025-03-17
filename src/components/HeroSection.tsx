@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { Radio, Signal, Globe, MessageSquare, ExternalLink, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -137,7 +136,9 @@ const HeroSection = () => {
                     <span className="text-sm font-medium">Memberships</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    ARRL • Vaca Valley Radio Club • Sac Valley Mesh
+                    <a href="https://www.arrl.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ARRL</a> • 
+                    <a href="https://w6vvr.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"> Vaca Valley Radio Club</a> • 
+                    <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"> Sac Valley Mesh</a>
                   </p>
                 </div>
               </CardContent>
