@@ -1,27 +1,15 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Radio, Signal, Globe, Mail, ExternalLink } from 'lucide-react';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 const Contact = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  
-  const { observe } = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "0px 0px -10% 0px"
-  });
-
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-    
-    if (titleRef.current) observe(titleRef.current);
-    if (cardRef.current) observe(cardRef.current);
-  }, [observe]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -29,20 +17,15 @@ const Contact = () => {
       <main className="pt-24 pb-20 px-6 md:px-10">
         <div className="max-w-4xl mx-auto">
           <h1 
-            ref={titleRef}
-            className="text-4xl font-bold mb-6 intersection-observer-trigger animate-fade-in-up"
+            className="text-4xl font-bold mb-6"
           >
             Contact Me
           </h1>
-          <p className="text-xl text-foreground/80 mb-10 intersection-observer-trigger animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          <p className="text-xl text-foreground/80 mb-10">
             I'm always looking to chat with new folks and learn new things. Here's how you can find me on the airwaves.
           </p>
           
-          <div 
-            ref={cardRef}
-            className="intersection-observer-trigger animate-fade-in-up"
-            style={{ animationDelay: '200ms' }}
-          >
+          <div>
             <Card className="glassy-card overflow-hidden max-w-2xl mx-auto">
               <CardContent className="p-8">
                 <div className="space-y-6">

@@ -6,15 +6,13 @@ interface IntersectionOptions {
   rootMargin?: string;
   threshold?: number | number[];
   triggerOnce?: boolean;
-  animationClass?: string;
 }
 
 export function useIntersectionObserver({
   root = null,
   rootMargin = '0px',
   threshold = 0.1,
-  triggerOnce = true,
-  animationClass = 'animate'
+  triggerOnce = true
 }: IntersectionOptions = {}) {
   const [entries, setEntries] = useState<IntersectionObserverEntry[]>([]);
   const [elements, setElements] = useState<Element[]>([]);
@@ -24,13 +22,8 @@ export function useIntersectionObserver({
     observer.current = new IntersectionObserver(
       (observedEntries) => {
         observedEntries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(animationClass);
-            if (triggerOnce) {
-              observer.current?.unobserve(entry.target);
-            }
-          } else if (!triggerOnce) {
-            entry.target.classList.remove(animationClass);
+          if (entry.isIntersecting && triggerOnce) {
+            observer.current?.unobserve(entry.target);
           }
         });
         setEntries(observedEntries);
@@ -39,7 +32,7 @@ export function useIntersectionObserver({
     );
 
     return () => observer.current?.disconnect();
-  }, [root, rootMargin, threshold, triggerOnce, animationClass]);
+  }, [root, rootMargin, threshold, triggerOnce]);
 
   useEffect(() => {
     const currentObserver = observer.current;

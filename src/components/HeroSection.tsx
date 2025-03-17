@@ -1,33 +1,12 @@
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Radio, Signal, Globe, MessageSquare, ExternalLink, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { cn } from '@/lib/utils';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  
-  const { observe } = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "0px 0px -10% 0px"
-  });
-
-  useEffect(() => {
-    if (titleRef.current) observe(titleRef.current);
-    if (cardRef.current) observe(cardRef.current);
-    if (subtitleRef.current) observe(subtitleRef.current);
-    if (imageRef.current) observe(imageRef.current);
-  }, [observe]);
-
   return (
     <section 
-      ref={heroRef}
       className="min-h-[85vh] flex items-center pt-20 pb-16 px-6 md:px-10"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
@@ -37,22 +16,18 @@ const HeroSection = () => {
           </div>
           
           <h1 
-            ref={titleRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight intersection-observer-trigger animate-fade-in-up"
-            style={{ animationDelay: '100ms' }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
           >
             I'm Jon <span className="text-primary">(KB0RB)</span>
           </h1>
           
           <p 
-            ref={subtitleRef}
-            className="text-xl md:text-2xl text-foreground/80 max-w-2xl intersection-observer-trigger animate-fade-in-up"
-            style={{ animationDelay: '200ms' }}
+            className="text-xl md:text-2xl text-foreground/80 max-w-2xl"
           >
             Based in Vacaville, California, continuing a family tradition of HAM radio across generations.
           </p>
           
-          <div className="flex space-x-4 pt-4 intersection-observer-trigger animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+          <div className="flex space-x-4 pt-4">
             <a 
               href="#about" 
               className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -68,9 +43,7 @@ const HeroSection = () => {
           </div>
           
           <div 
-            ref={imageRef}
-            className="mt-8 lg:hidden intersection-observer-trigger animate-fade-in-up rounded-xl overflow-hidden shadow-lg"
-            style={{ animationDelay: '400ms' }}
+            className="mt-8 lg:hidden rounded-xl overflow-hidden shadow-lg"
           >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 
@@ -81,11 +54,7 @@ const HeroSection = () => {
         </div>
         
         <div className="grid grid-cols-1 gap-6">
-          <div
-            ref={cardRef}
-            className="intersection-observer-trigger animate-slide-in-right"
-            style={{ animationDelay: '400ms' }}
-          >
+          <div>
             <Card className="glassy-card overflow-hidden">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
@@ -182,9 +151,7 @@ const HeroSection = () => {
           </div>
           
           <div 
-            className="hidden lg:block intersection-observer-trigger animate-slide-in-right rounded-xl overflow-hidden shadow-lg"
-            style={{ animationDelay: '500ms' }}
-            ref={useRef<HTMLDivElement>(null)}
+            className="hidden lg:block rounded-xl overflow-hidden shadow-lg"
           >
             <img 
               src="/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" 

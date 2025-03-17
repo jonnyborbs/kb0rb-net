@@ -1,8 +1,7 @@
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Antenna, Radio, Smartphone } from 'lucide-react';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 const equipmentData = [
   {
@@ -41,27 +40,11 @@ const equipmentData = [
 ];
 
 const EquipmentSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  
-  const { observe } = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: "0px 0px -10% 0px"
-  });
-
-  useEffect(() => {
-    if (titleRef.current) observe(titleRef.current);
-    cardRefs.current.forEach(ref => {
-      if (ref) observe(ref);
-    });
-  }, [observe]);
-
   return (
     <section id="equipment" className="py-20 px-6 md:px-10 bg-gray-50/50">
       <div className="max-w-7xl mx-auto">
         <h2 
-          ref={titleRef}
-          className="text-3xl font-bold mb-10 text-center intersection-observer-trigger animate-fade-in-up"
+          className="text-3xl font-bold mb-10 text-center"
         >
           My Equipment
         </h2>
@@ -70,9 +53,7 @@ const EquipmentSection = () => {
           {equipmentData.map((category, idx) => (
             <div
               key={category.category}
-              ref={el => cardRefs.current[idx] = el}
-              className="intersection-observer-trigger animate-fade-in-up"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              className="h-full"
             >
               <Card className="h-full hover:shadow-md transition-shadow duration-300">
                 <CardContent className="p-6">
