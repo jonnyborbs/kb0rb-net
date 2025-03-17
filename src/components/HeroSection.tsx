@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useRef } from 'react';
 import { Radio, Signal, Globe, MessageSquare, ExternalLink, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -7,23 +6,8 @@ import { Separator } from '@/components/ui/separator';
 const HeroSection = () => {
   return (
     <section 
-      className="min-h-[85vh] flex items-center pt-20 pb-16 px-6 md:px-10 relative"
+      className="min-h-[85vh] flex items-center pt-20 pb-16 px-6 md:px-10"
     >
-      {/* Left side decorative elements - only visible on larger screens */}
-      <div className="hidden xl:flex absolute left-0 top-0 h-full w-32 flex-col items-center justify-center space-y-8 border-r border-border/30 bg-background/50">
-        <div className="flex flex-col items-center">
-          <Signal className="h-8 w-8 text-primary opacity-70" />
-          <div className="h-32 w-px bg-gradient-to-b from-primary/50 to-transparent mt-3"></div>
-        </div>
-        <div className="flex flex-col items-center">
-          <Radio className="h-8 w-8 text-primary opacity-70" />
-          <div className="h-32 w-px bg-gradient-to-b from-primary/50 to-transparent mt-3"></div>
-        </div>
-        <div className="flex flex-col items-center">
-          <Globe className="h-8 w-8 text-primary opacity-70" />
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-ham-muted text-ham-dark text-sm font-medium mb-4">
