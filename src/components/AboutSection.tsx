@@ -12,8 +12,11 @@ I send eQSLs and haven't yet gotten physical ones made yet. But I hope to soon!
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-6 md:px-10">
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="py-20 px-6 md:px-10 relative">
+      {/* Left side decorative element */}
+      <div className="hidden xl:block absolute left-0 top-0 h-full w-32 border-r border-border/30 bg-background/50"></div>
+      
+      <div className="max-w-4xl mx-auto relative">
         <h2 
           className="text-3xl font-bold mb-8"
         >
