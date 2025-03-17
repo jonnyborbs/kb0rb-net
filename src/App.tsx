@@ -13,16 +13,15 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Set initial theme based on local storage or system preference
+  // Force dark mode
   useEffect(() => {
-    const storedTheme = localStorage.getItem('kb0rb-theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Remove any existing theme classes
+    document.documentElement.classList.remove('light');
+    // Apply dark theme
+    document.documentElement.classList.add('dark');
     
-    const initialTheme = storedTheme 
-      ? JSON.parse(storedTheme) 
-      : systemPrefersDark ? 'dark' : 'light';
-    
-    document.documentElement.classList.add(initialTheme);
+    // Override any stored theme with dark mode
+    localStorage.setItem('kb0rb-theme', JSON.stringify('dark'));
   }, []);
 
   return (
