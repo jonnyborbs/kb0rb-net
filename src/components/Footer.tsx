@@ -33,7 +33,11 @@ const Footer = () => {
         </div>
         
         <div className="mt-10 pt-6 border-t border-gray-100 text-center text-sm text-foreground/50">
-          <p>ARRL Member • Vaca Valley Radio Club • Sac Valley Mesh</p>
+          <p>
+            <a href="https://www.arrl.org" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ARRL Member</a> • 
+            <a href="https://w6vvr.net" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"> Vaca Valley Radio Club</a> • 
+            <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"> Sac Valley Mesh</a>
+          </p>
         </div>
       </div>
     </footer>

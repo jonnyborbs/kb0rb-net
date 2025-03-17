@@ -3,7 +3,7 @@ import React from 'react';
 import MarkdownContent from './MarkdownContent';
 
 const aboutContent = `
-I come from a long line of hams going back generations and am proud to carry on the family tradition, combining technology and communication with the fun of meeting new people. I'm a member of the ARRL as well as the Vaca Valley Radio Club (VVRC, https://w6vvr.net) and Sac Valley Mesh (https://www.sacvalleymesh.com) and got my FCC Amateur Extra in 2025.
+I come from a long line of hams going back generations and am proud to carry on the family tradition, combining technology and communication with the fun of meeting new people. I'm a member of the [ARRL](https://www.arrl.org) as well as the [Vaca Valley Radio Club (VVRC)](https://w6vvr.net) and [Sac Valley Mesh](https://www.sacvalleymesh.com) and got my FCC Amateur Extra in 2025.
 
 I'm always looking to chat with new folks and learn new things so if you see me, say hi!
 

@@ -94,15 +94,30 @@ const Contact = () => {
                   <div className="pt-4 mt-4 border-t border-gray-100">
                     <h3 className="font-medium mb-3">Memberships</h3>
                     <div className="flex flex-wrap gap-2">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+                      <a 
+                        href="https://www.arrl.org" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm hover:bg-primary/20 transition-colors"
+                      >
                         ARRL
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+                      </a>
+                      <a 
+                        href="https://w6vvr.net" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm hover:bg-primary/20 transition-colors"
+                      >
                         Vaca Valley Radio Club
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+                      </a>
+                      <a 
+                        href="https://www.sacvalleymesh.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm hover:bg-primary/20 transition-colors"
+                      >
                         Sac Valley Mesh
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>
