@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { Radio, Signal, Globe, MessageSquare, ExternalLink, Mail } from 'lucide-react';
+import { Radio, Signal, Globe, ExternalLink, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -30,12 +31,12 @@ const HeroSection = () => {
               >
                 Learn More
               </a>
-              <a 
-                href="#equipment" 
+              <Link 
+                to="/equipment" 
                 className="inline-flex h-10 items-center justify-center rounded-md border border-input hover:bg-accent hover:text-accent-foreground px-8 text-sm font-medium shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               >
                 My Equipment
-              </a>
+              </Link>
             </div>
           </div>
           
