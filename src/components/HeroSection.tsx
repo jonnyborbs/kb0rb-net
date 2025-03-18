@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { Radio, Signal, Globe, MessageSquare, ExternalLink, Mail } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,8 +9,8 @@ const HeroSection = () => {
     <section 
       className="min-h-[85vh] flex items-center pt-20 pb-16 px-6 md:px-10"
     >
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-        <div className="space-y-6">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-ham-muted text-ham-dark text-sm font-medium mb-4">
             <Signal className="w-4 h-4 mr-2" /> Amateur Radio Operator
           </div>
@@ -52,7 +53,7 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 gap-6">
+        <div className="lg:col-span-5 grid grid-cols-1 gap-6">
           <div>
             <Card className="glassy-card overflow-hidden">
               <CardHeader className="pb-3">

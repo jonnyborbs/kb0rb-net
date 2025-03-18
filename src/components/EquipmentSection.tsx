@@ -41,41 +41,48 @@ const equipmentData = [
 
 const EquipmentSection = () => {
   return (
-    <section id="equipment" className="py-20 px-6 md:px-10 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto">
-        <h2 
-          className="text-3xl font-bold mb-10 text-center"
-        >
-          My Equipment
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {equipmentData.map((category, idx) => (
-            <div
-              key={category.category}
-              className="h-full"
-            >
-              <Card className="h-full hover:shadow-md transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="mr-3 p-2 rounded-full bg-primary/10 text-primary">
-                      {category.icon}
-                    </div>
-                    <h3 className="font-semibold text-lg">{category.category}</h3>
-                  </div>
-                  
-                  <ul className="space-y-2">
-                    {category.items.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-2.5"></div>
-                        <span className="text-foreground/80">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+    <section id="equipment" className="py-20 px-6 md:px-10 bg-gray-50/5">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-3">
+          <div className="sticky top-24">
+            <h2 className="text-3xl font-bold mb-6">My Equipment</h2>
+            <div className="hidden lg:block w-24 h-1 bg-primary mb-8"></div>
+            <div className="hidden lg:flex flex-col space-y-4 text-muted-foreground">
+              <a href="#about" className="hover:text-primary transition-colors">About Me</a>
+              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
             </div>
-          ))}
+          </div>
+        </div>
+        
+        <div className="lg:col-span-9">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {equipmentData.map((category, idx) => (
+              <div
+                key={category.category}
+                className="h-full"
+              >
+                <Card className="h-full hover:shadow-md transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="mr-3 p-2 rounded-full bg-primary/10 text-primary">
+                        {category.icon}
+                      </div>
+                      <h3 className="font-semibold text-lg">{category.category}</h3>
+                    </div>
+                    
+                    <ul className="space-y-2">
+                      {category.items.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-2.5"></div>
+                          <span className="text-foreground/80">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

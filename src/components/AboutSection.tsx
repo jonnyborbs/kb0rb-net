@@ -13,17 +13,22 @@ I send eQSLs and haven't yet gotten physical ones made yet. But I hope to soon!
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6 md:px-10">
-      <div className="max-w-4xl mx-auto">
-        <h2 
-          className="text-3xl font-bold mb-8"
-        >
-          About Me
-        </h2>
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-3">
+          <div className="sticky top-24">
+            <h2 className="text-3xl font-bold mb-6">About Me</h2>
+            <div className="hidden lg:block w-24 h-1 bg-primary mb-8"></div>
+            <div className="hidden lg:flex flex-col space-y-4 text-muted-foreground">
+              <a href="#equipment" className="hover:text-primary transition-colors">Equipment</a>
+              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            </div>
+          </div>
+        </div>
         
-        <div 
-          className="prose prose-lg max-w-none"
-        >
-          <MarkdownContent content={aboutContent} />
+        <div className="lg:col-span-9">
+          <div className="prose prose-lg max-w-none dark:prose-invert">
+            <MarkdownContent content={aboutContent} />
+          </div>
         </div>
       </div>
     </section>
