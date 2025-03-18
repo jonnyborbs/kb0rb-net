@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Radio, Signal, Globe, ExternalLink, Mail } from 'lucide-react';
+import { Radio, Signal, Globe, ExternalLink, Mail, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
@@ -127,7 +127,7 @@ const HeroSection = () => {
               
               <div>
                 <div className="flex items-center mb-2">
-                  <MessageSquare className="w-4 h-4 mr-2 text-muted-foreground" />
+                  <MessageCircle className="w-4 h-4 mr-2 text-muted-foreground" />
                   <span className="text-sm font-medium">Memberships</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
