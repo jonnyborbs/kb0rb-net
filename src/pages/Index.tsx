@@ -35,7 +35,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="page-container">
-        <main className="main-content">
+        <main className="content-container">
           <HeroSection />
           <AboutSection />
           <EquipmentSection />

@@ -15,7 +15,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="page-container">
-        <main className="main-content pt-24 pb-20">
+        <main className="content-container pt-24 pb-20">
           <h1 
             className="text-4xl font-bold mb-6"
           >

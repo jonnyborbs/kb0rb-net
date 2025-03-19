@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div className="space-y-12">
       {/* Hero Section with Text and Image */}
-      <section className="min-h-[60vh] flex items-center pt-20 pb-8">
+      <section className="min-h-[60vh] flex items-center pt-20 pb-8 px-6 md:px-10">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-ham-muted text-ham-dark text-sm font-medium mb-4">
@@ -51,7 +51,7 @@ const HeroSection = () => {
       </section>
 
       {/* Contact Section - Full Width */}
-      <section className="w-full pb-16">
+      <section className="w-full px-6 md:px-10 pb-16">
         <Card className="glassy-card overflow-hidden max-w-5xl mx-auto">
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">

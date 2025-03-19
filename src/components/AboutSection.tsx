@@ -12,7 +12,7 @@ I send eQSLs and haven't yet gotten physical ones made yet. But I hope to soon!
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 px-6 md:px-10">
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-3">
           <div className="sticky top-24">
