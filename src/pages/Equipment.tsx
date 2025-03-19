@@ -13,15 +13,15 @@ const Equipment = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-24 pb-10 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
+      <div className="page-container">
+        <div className="content-container pt-24 pb-10">
           <h1 className="text-4xl font-bold mb-6">My Equipment</h1>
           <p className="text-xl text-foreground/80 mb-10">
             Here's a detailed look at the radio equipment I use for amateur radio operations.
           </p>
         </div>
+        <EquipmentSection />
       </div>
-      <EquipmentSection />
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Radio, Signal, Globe, Mail, ExternalLink } from 'lucide-react';
+import { Radio, Signal, Globe, ExternalLink, Mail } from 'lucide-react';
 
 const Contact = () => {
   useEffect(() => {
@@ -14,8 +14,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="pt-24 pb-20 px-6 md:px-10">
-        <div className="max-w-4xl mx-auto">
+      <div className="page-container">
+        <main className="content-container pt-24 pb-20">
           <h1 
             className="text-4xl font-bold mb-6"
           >
@@ -91,7 +91,7 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <div className="pt-4 mt-4 border-t border-gray-100">
+                  <div className="pt-4 mt-4 border-t border-gray-100 dark:border-gray-800">
                     <h3 className="font-medium mb-3">Memberships</h3>
                     <div className="flex flex-wrap gap-2">
                       <a 
@@ -124,8 +124,8 @@ const Contact = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
       <Footer />
     </div>
   );
