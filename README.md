@@ -82,7 +82,7 @@ background beside the name, tagline and a short blurb, at the 1200×630 that lin
 previews expect. It needs nothing but macOS (`qlmanage` and `sips`):
 
 ```bash
-scripts/make-og-card.py --icon assets/img/node-control-icon.png --title "AllStar Node Control" --tagline "Run your AllStarLink node from your pocket" --line "Connect and disconnect links, watch node status, record" --line "custom command macros, and keep your favourite nodes a" --line "tap away. Everything stays on your device." --out assets/img/og-allstar-node-control.jpg
+scripts/make-og-card.py --icon assets/img/node-control-icon.png --title "AllStar Node Control" --tagline "Manage your AllStarLink node from your pocket" --line "Connect and disconnect links, watch node status, record" --line "custom command macros, and keep your favourite nodes a" --line "tap away. Everything stays on your device." --out assets/img/og-allstar-node-control.jpg
 ```
 
 SVG has no automatic wrapping, so each `--line` is placed literally — break them yourself

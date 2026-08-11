@@ -22,7 +22,7 @@
 - name: AllStar Node Control
   slug: allstar-node-control
   icon_image: /assets/img/node-control-icon.png
-  tagline: Run your AllStarLink node from your pocket
+  tagline: Manage your AllStarLink node from your pocket
   summary: >-
     An iOS app for operating your AllStarLink nodes. Node Control lets you connect and 
     disconnect links, watch node status, and keep your favourite nodes a tap away. Configure
