@@ -71,6 +71,28 @@ the ideal source. Projects without one fall back to an SVG icon named by `icon:`
 Icons come from `_includes/icon.html` — add a `when "name"` branch there with the SVG paths
 to introduce a new one.
 
+### Social preview cards
+
+Every page gets `og:image` from a default in `_config.yml` — the station photo,
+`assets/img/og-image.jpg`. A page can override it by setting `image:` in its own front
+matter, which is what `/projects/allstar-node-control/` does.
+
+`scripts/make-og-card.py` builds a project card: the app icon on the site's dark
+background beside the name, tagline and a short blurb, at the 1200×630 that link
+previews expect. It needs nothing but macOS (`qlmanage` and `sips`):
+
+```bash
+scripts/make-og-card.py --icon assets/img/node-control-icon.png --title "AllStar Node Control" --tagline "Run your AllStarLink node from your pocket" --line "Connect and disconnect links, watch node status, record" --line "custom command macros, and keep your favourite nodes a" --line "tap away. Everything stays on your device." --out assets/img/og-allstar-node-control.jpg
+```
+
+SVG has no automatic wrapping, so each `--line` is placed literally — break them yourself
+at roughly 55 characters.
+
+The text a preview actually shows comes from the page's `description:`, not the image, so
+keep that to a couple of sentences and worth reading on its own.
+
+Note there is deliberately no `twitter:` block in `_config.yml`; see the comment there.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds the site with Jekyll and publishes it with the
