@@ -40,6 +40,5 @@ them.
 ## Support
 
 Questions, bugs and feature requests go to
-[qso@kb0rb.net](mailto:qso@kb0rb.net?subject=AllStar%20Node%20Control).
-
+[support@greylineft8.com](mailto:support@greylineft8.com?subject=AllStar%20Node%20Control%20question)
 AllStar Node Control is not affiliated with or endorsed by AllStarLink, Inc.

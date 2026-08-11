@@ -128,4 +128,4 @@ Earlier versions are available in the
 Questions about this policy, or about privacy in the app, can go to:
 
 **Jon Schulman, KB0RB**
-[qso@kb0rb.net](mailto:qso@kb0rb.net?subject=AllStar%20Node%20Control%20privacy)
+[support@greylineft8.com](mailto:support@greylineft8.com?subject=AllStar%20Node%20Control%20privacy)
