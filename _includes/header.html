@@ -8,11 +8,16 @@
     <nav class="nav" id="nav" aria-label="Main">
       {%- for item in site.data.nav -%}
         {%- assign url = item.url | relative_url -%}
+        {%- comment -%}
+          Liquid's `assign` cannot hold a comparison, so each branch has to set
+          the flag itself. Home only matches the root exactly; every other item
+          matches its own section and anything nested under it.
+        {%- endcomment -%}
+        {%- assign active = false -%}
         {%- if item.url == "/" -%}
-          {%- assign active = page.url == "/" -%}
-        {%- else -%}
-          {%- assign active = false -%}
-          {%- if page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
+          {%- if page.url == "/" -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url contains item.url -%}
+          {%- assign active = true -%}
         {%- endif -%}
         <a href="{{ url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
       {%- endfor -%}
