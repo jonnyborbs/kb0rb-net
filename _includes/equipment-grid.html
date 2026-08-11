@@ -1,0 +1,15 @@
+<div class="equipment-grid">
+  {%- for group in site.data.equipment -%}
+  <div class="card card-pad equipment-card">
+    <h3>
+      <span class="bubble">{% include icon.html name=group.icon %}</span>
+      {{ group.category }}
+    </h3>
+    <ul class="tick-list">
+      {%- for item in group.items -%}
+      <li>{{ item }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  {%- endfor -%}
+</div>

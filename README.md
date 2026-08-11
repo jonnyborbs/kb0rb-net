@@ -1,69 +1,85 @@
-# Welcome to your Lovable project
+# KB0RB.net
 
-## Project info
+The personal site of Jon, KB0RB — a static [Jekyll](https://jekyllrb.com) site published
+to GitHub Pages at **[kb0rb.net](https://kb0rb.net)**.
 
-**URL**: https://lovable.dev/projects/f757f0b1-4836-4503-9fe3-0a7092b141cf
+No frameworks, no build step beyond Jekyll, and no client-side JavaScript apart from the
+theme toggle and mobile menu.
 
-## How can I edit this code?
+## Running it locally
 
-There are several ways of editing your application.
+You need Ruby 3.x or newer (`brew install ruby`), then:
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f757f0b1-4836-4503-9fe3-0a7092b141cf) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+bundle install
 ```
 
-**Edit a file directly in GitHub**
+```bash
+bundle exec jekyll serve --livereload
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The site is then at <http://localhost:4000>. Changes to files under `_data/`, `_layouts/`
+and `_includes/` are picked up on save; changes to `_config.yml` need a restart.
 
-**Use GitHub Codespaces**
+## How it's put together
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+| Path | What lives there |
+| --- | --- |
+| `_config.yml` | Site title, description, URL, plugins |
+| `_data/` | The site's content that isn't prose — see below |
+| `_layouts/` | `default` (shell), `project` (a project page), `legal` (privacy policies) |
+| `_includes/` | Header, footer, icons, and the reusable card blocks |
+| `assets/css/main.css` | The whole stylesheet, with light/dark colour tokens at the top |
+| `assets/js/site.js` | Theme toggle, mobile nav, header scroll state |
+| `projects/` | One Markdown file per project, plus the privacy policy |
 
-## What technologies are used for this project?
+### Editing content without touching HTML
 
-This project is built with .
+Most of what changes lives in `_data/`:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **`_data/equipment.yml`** — the gear list. Add a line under the right `items:` block and
+  it appears on the home page and `/equipment/`.
+- **`_data/callsigns.yml`** — callsigns, DMR ID, grid, email, QRZ. Drives the contact card
+  in both places it appears.
+- **`_data/memberships.yml`** — club and organisation links in the contact card and footer.
+- **`_data/projects.yml`** — the project cards. Each entry's `slug` must match the `slug:`
+  in the matching file under `projects/`.
+- **`_data/nav.yml`** — the header and footer navigation.
 
-## How can I deploy this project?
+### Adding a project
 
-Simply open [Lovable](https://lovable.dev/projects/f757f0b1-4836-4503-9fe3-0a7092b141cf) and click on Share -> Publish.
+Add an entry to `_data/projects.yml` with a unique `slug`, then give the card somewhere
+to point — one of two ways, never both:
 
-## I want to use a custom domain - is that possible?
+- **`url:`** — the project has its own website. The card title and its call to action
+  open that site in a new tab, and nothing about the project is duplicated here.
+  Greyline FT8 and We Have Wine at Home! work this way.
+- **`page:`** — there is no dedicated site, so the project needs a page here. Create
+  `projects/<slug>.md` with `layout: project`, the same `slug:`, and
+  `permalink: /projects/<slug>/`. The layout pulls the name, tagline, icon and status
+  from the data file, so the Markdown body is just the prose. AllStar Node Control
+  works this way, and its privacy policy hangs off it.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+**`appstore:`** adds Apple's "Download on the App Store" badge to the card. If a project
+has no `appstore:` but does have a `status:`, that shows as a pill instead — which is how
+AllStar Node Control shows "Coming soon to the App Store" until it ships.
+
+**`icon_image:`** points at an app icon in `assets/img/`. Export it as a square around
+256px; the CSS rounds the corners, so a full-bleed square with no rounding of its own is
+the ideal source. Projects without one fall back to an SVG icon named by `icon:`.
+
+Icons come from `_includes/icon.html` — add a `when "name"` branch there with the SVG paths
+to introduce a new one.
+
+## Deployment
+
+`.github/workflows/deploy.yml` builds the site with Jekyll and publishes it with the
+official GitHub Pages actions on every push to `main`. Pull requests run the same build
+(plus an internal link check with html-proofer) without deploying.
+
+For this to work, **Settings → Pages → Build and deployment → Source** must be set to
+**GitHub Actions**.
+
+The custom domain is held in `CNAME`. DNS for `kb0rb.net` should be four `A` records to
+GitHub's apex addresses (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+`185.199.111.153`), with `www` as a `CNAME` to `jonnyborbs.github.io`.

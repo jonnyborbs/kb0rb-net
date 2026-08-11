@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-head">
+    <h2>{{ include.heading | default: "Contact Details" }}</h2>
+    {% include icon.html name="radio" %}
+  </div>
+  <p class="card-sub">{{ include.sub | default: "Find me on the airwaves" }}</p>
+
+  <div class="contact-grid">
+    {%- for c in site.data.callsigns -%}
+    <div class="contact-item">
+      <span class="bubble">{% include icon.html name=c.icon %}</span>
+      <div>
+        <span class="label">{{ c.label }}</span>
+        {%- if c.url -%}
+          <a class="value{% if c.mono %} mono{% endif %}" href="{{ c.url }}"{% if c.external %} target="_blank" rel="noopener"{% endif %}>{{ c.value }}{% if c.external %} {% include icon.html name="external-link" %}{% endif %}</a>
+        {%- else -%}
+          <span class="value{% if c.mono %} mono{% endif %}">{{ c.value }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- endfor -%}
+
+    <div class="contact-item contact-item-wide">
+      <span class="bubble">{% include icon.html name="users" %}</span>
+      <div>
+        <span class="label">Memberships</span>
+        <div class="pill-row">
+          {%- for m in site.data.memberships -%}
+            <a class="pill" href="{{ m.url }}" target="_blank" rel="noopener">{{ m.name }}</a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-foot">
+    <p>I'm always looking to chat with new folks and learn new things &mdash; if you see me, say hi!</p>
+  </div>
+</div>

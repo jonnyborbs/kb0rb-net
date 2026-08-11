@@ -1,0 +1,26 @@
+- category: Transceivers
+  icon: radio
+  items:
+    - Yaesu FTM-500D for VHF/UHF
+    - Icom IC-7300 for HF
+    - AnyTone DV878II Plus HT for VHF/UHF and DMR
+    - Baofeng F8HP-Pro HT
+    - TIDRADIO H3 HT for GMRS
+    - QRZ-1 Explorer HT
+
+- category: Antennas & Accessories
+  icon: antenna
+  items:
+    - Diamond X-30A antenna for 2m/70cm
+    - Palomar BAS-71 9:1 unun random wire end fed for HF
+    - Daiwa CN-901 SWR meter
+    - Tekpower TP50SW power supply
+    - Palomar CMNF-500-50 noise filter
+
+- category: Digital & Mesh
+  icon: cpu
+  items:
+    - HamClock on Synology
+    - WSJT-X for FT8
+    - Meshtastic and LoRa devices
+    - B&O Station G2 with Airframes cavity filter and 10 dBi antenna

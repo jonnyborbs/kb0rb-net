@@ -1,0 +1,25 @@
+- label: Amateur (Extra)
+  value: KB0RB
+  icon: radio
+  mono: true
+- label: GMRS
+  value: WSGQ342
+  icon: signal
+  mono: true
+- label: DMR ID
+  value: "3213970"
+  icon: globe
+  mono: true
+- label: Grid Square
+  value: CM98aj
+  icon: map-pin
+  mono: true
+- label: Email
+  value: qso@kb0rb.net
+  icon: mail
+  url: mailto:qso@kb0rb.net
+- label: QRZ Profile
+  value: KB0RB
+  icon: external-link
+  url: https://www.qrz.com/db/kb0rb
+  external: true

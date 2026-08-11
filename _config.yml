@@ -1,0 +1,52 @@
+title: KB0RB
+callsign: KB0RB
+owner: Jon
+tagline: Amateur Radio Operator
+description: >-
+  KB0RB is Jon, a US Amateur Extra class ham in Vacaville, California
+  (grid CM98aj), carrying on a family tradition of amateur radio.
+url: https://kb0rb.net
+baseurl: ""
+lang: en
+timezone: America/Los_Angeles
+
+# Used by jekyll-seo-tag for social cards
+image: /assets/img/og-image.jpg
+
+author:
+  name: Jon (KB0RB)
+  email: qso@kb0rb.net
+
+twitter:
+  card: summary_large_image
+
+social:
+  name: Jon (KB0RB)
+  links:
+    - https://www.qrz.com/db/kb0rb
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+permalink: pretty
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Every page sets its own layout explicitly — a `defaults` block here would also
+# wrap assets/css/main.css and robots.txt in a layout.
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github
+  - node_modules
+  - scripts

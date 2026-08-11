@@ -1,24 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KB0RB.net</title>
-    <meta name="description" content="KB0RB is Jon, a US Amateur Extra ham" />
-    <meta name="author" content="Jon KB0RB" />
-    <meta property="og:description" content="KB0RB is Jon, a US Amateur Extra ham" />
-    <meta property="og:image" content="https://kb0rb.net/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" />
-    <meta property="og:title" content="KB0RB QTH Grid CM98aj USA" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KB0RB QTH Grid CM98aj USA" />
-    <meta name="twitter:description" content="KB0RB is Jon, a US Amateur Extra ham" />
-    <meta name="twitter:image" content="https://kb0rb.net/lovable-uploads/3e8c97e4-9c43-4498-974a-ab7230098c6c.png" />
-  </head>
+---
+layout: default
+title: KB0RB
+description: >-
+  Jon (KB0RB), a US Amateur Extra class ham in Vacaville, California — grid CM98aj.
+  Station details, equipment, and the amateur radio software I build.
+---
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">{% include icon.html name="signal" %} Amateur Radio Operator</span>
+      <h1>I'm Jon <span class="call">(KB0RB)</span></h1>
+      <p class="lead">
+        Based in Vacaville, California, continuing a family tradition of ham radio
+        across generations &mdash; and writing software for it along the way.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#about">Learn More</a>
+        <a class="btn" href="{{ '/projects/' | relative_url }}">My Projects</a>
+        <a class="btn" href="{{ '/equipment/' | relative_url }}">My Equipment</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="{{ '/assets/img/station.jpg' | relative_url }}"
+           alt="Jon (KB0RB) at his ham radio station"
+           width="1600" height="1200">
+    </div>
+  </section>
+
+  <section class="section" id="contact-card">
+    {% include contact-card.html %}
+  </section>
+
+  <section class="section split" id="about">
+    <div class="split-aside">
+      <h2>About Me</h2>
+      <div class="rule"></div>
+      <div class="split-links">
+        <a href="#projects">Projects</a>
+        <a href="#equipment">Equipment</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>
+        I come from a long line of hams going back generations and am proud to carry on
+        the family tradition, combining technology and communication with the fun of
+        meeting new people. I'm a member of the
+        <a href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a> as well as the
+        <a href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club (VVRC)</a> and
+        <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a>,
+        and got my FCC Amateur Extra in 2025.
+      </p>
+      <p>
+        The hobby is also where most of my software ends up. I build iOS apps for the
+        things I wanted on my own bench &mdash; running FT8 from a phone in the field, and
+        keeping an AllStarLink node under control from wherever I happen to be.
+      </p>
+      <p>
+        I'm always looking to chat with new folks and learn new things, so if you see me,
+        say hi! I send eQSLs and haven't gotten physical ones made yet &mdash; but I hope to soon.
+      </p>
+    </div>
+  </section>
+
+  <section class="section split" id="projects">
+    <div class="split-aside">
+      <h2>Projects</h2>
+      <div class="rule"></div>
+      <div class="split-links">
+        <a href="#about">About Me</a>
+        <a href="#equipment">Equipment</a>
+        <a href="{{ '/projects/' | relative_url }}">All projects</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="lead" style="margin-bottom:1.75rem">
+        Software I write and support, mostly for the radio bench.
+      </p>
+      {% include project-cards.html %}
+    </div>
+  </section>
+
+  <section class="section split" id="equipment">
+    <div class="split-aside">
+      <h2>My Equipment</h2>
+      <div class="rule"></div>
+      <div class="split-links">
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </div>
+    </div>
+
+    <div>
+      {% include equipment-grid.html %}
+    </div>
+  </section>
+</div>

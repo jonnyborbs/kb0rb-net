@@ -1,0 +1,32 @@
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% include icon.html name="signal" class="brand-icon" %}
+      <span class="brand-call">{{ site.callsign }}</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      {%- for item in site.data.nav -%}
+        {%- assign url = item.url | relative_url -%}
+        {%- if item.url == "/" -%}
+          {%- assign active = page.url == "/" -%}
+        {%- else -%}
+          {%- assign active = false -%}
+          {%- if page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
+        {%- endif -%}
+        <a href="{{ url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to light theme">
+        {% include icon.html name="moon" class="theme-icon-dark" %}
+        {% include icon.html name="sun" class="theme-icon-light" %}
+      </button>
+      <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        {% include icon.html name="menu" class="nav-icon-open" %}
+        {% include icon.html name="close" class="nav-icon-close" %}
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- assign project = site.data.projects | where: "slug", page.slug | first -%}
+<div class="wrap">
+  <p class="breadcrumb"><a href="{{ '/projects/' | relative_url }}">Projects</a> <span>/</span> {{ project.name | default: page.title }}</p>
+
+  <header class="page-head project-head">
+    {%- if project.icon_image -%}
+      <img class="app-icon app-icon-lg" src="{{ project.icon_image | relative_url }}" alt="" width="256" height="256">
+    {%- else -%}
+      <div class="project-head-icon">{% include icon.html name=project.icon %}</div>
+    {%- endif -%}
+    <div>
+      <h1>{{ project.name | default: page.title }}</h1>
+      {%- if project.tagline %}<p class="lead">{{ project.tagline }}</p>{% endif -%}
+      {%- if project.appstore -%}
+        {% include appstore-badge.html url=project.appstore name=project.name %}
+      {%- elsif project.status -%}
+        <p class="tag-row"><span class="tag tag-status">{{ project.status }}</span></p>
+      {%- endif -%}
+    </div>
+  </header>
+
+  {%- if project.url -%}
+  <p class="btn-row">
+    <a class="btn btn-primary" href="{{ project.url }}" target="_blank" rel="noopener">
+      Visit {{ project.url_label | default: project.name }} {% include icon.html name="external-link" %}
+    </a>
+  </p>
+  {%- endif -%}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {%- if project.links -%}
+  <div class="prose">
+    <h2>Documents</h2>
+    <ul class="link-list">
+      {%- for l in project.links -%}
+        <li><a href="{{ l.url | relative_url }}">{% include icon.html name="shield" %} {{ l.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  {%- endif -%}
+</div>

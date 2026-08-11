@@ -1,0 +1,15 @@
+{%- comment -%}
+Apple's official "Download on the App Store" badge, used unmodified.
+Both variants ship: Apple's guidelines call for the black badge on light
+backgrounds and the white one on dark, so CSS shows whichever matches the
+current theme. The accessible name sits on the link rather than on either
+image, so it survives the swap.
+Usage: {% include appstore-badge.html url=p.appstore name=p.name %}
+{%- endcomment -%}
+<a class="appstore-badge" href="{{ include.url }}" target="_blank" rel="noopener"
+   aria-label="Download {{ include.name }} on the App Store">
+  <img class="badge-on-dark" src="{{ '/assets/img/download_white.svg' | relative_url }}"
+       alt="" width="120" height="40">
+  <img class="badge-on-light" src="{{ '/assets/img/download_black.svg' | relative_url }}"
+       alt="" width="120" height="40">
+</a>
