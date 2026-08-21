@@ -47,8 +47,10 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Icon sprite. Referenced below with <use href="#i-name">. Identical on
-       every page; if you add an icon, add it here and in the other pages. -->
+  <!-- Icon sprite: definitions only, hidden by the .sprite rule in main.css.
+       An icon is drawn by an svg.icon whose use element points at one of the
+       symbol ids below - see the header and footer for examples.
+       This block is identical on every page; add a new icon to all of them. -->
   <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
     <defs>
     <symbol id="i-antenna" viewBox="0 0 24 24"><path d="M2 12 7 2M7 12l5-10M12 12l5-10M17 12l5-10M4.5 7h15M12 16v6"/></symbol>
