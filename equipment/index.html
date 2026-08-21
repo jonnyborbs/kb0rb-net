@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)">
 
-  <title>Page Not Found | KB0RB</title>
-  <meta name="description" content="KB0RB is Jon, a US Amateur Extra class ham in Vacaville, California (grid CM98aj), carrying on a family tradition of amateur radio.">
-  <link rel="canonical" href="https://kb0rb.net/404.html">
+  <title>Equipment | KB0RB</title>
+  <meta name="description" content="The radios, antennas and digital gear in the KB0RB shack.">
+  <link rel="canonical" href="https://kb0rb.net/equipment/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="KB0RB">
-  <meta property="og:title" content="Page Not Found">
-  <meta property="og:description" content="KB0RB is Jon, a US Amateur Extra class ham in Vacaville, California (grid CM98aj), carrying on a family tradition of amateur radio.">
-  <meta property="og:url" content="https://kb0rb.net/404.html">
+  <meta property="og:title" content="Equipment">
+  <meta property="og:description" content="The radios, antennas and digital gear in the KB0RB shack.">
+  <meta property="og:url" content="https://kb0rb.net/equipment/">
   <meta property="og:image" content="https://kb0rb.net/assets/img/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Page Not Found">
-  <meta name="twitter:description" content="KB0RB is Jon, a US Amateur Extra class ham in Vacaville, California (grid CM98aj), carrying on a family tradition of amateur radio.">
+  <meta name="twitter:title" content="Equipment">
+  <meta name="twitter:description" content="The radios, antennas and digital gear in the KB0RB shack.">
   <meta name="twitter:image" content="https://kb0rb.net/assets/img/og-image.jpg">
 
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
@@ -79,7 +79,7 @@
       <nav class="nav" id="nav" aria-label="Main">
         <a href="/">Home</a>
         <a href="/projects/">Projects</a>
-        <a href="/equipment/">Equipment</a>
+        <a href="/equipment/" class="is-active" aria-current="page">Equipment</a>
         <a href="/contact/">Contact</a>
         <a href="https://ko-fi.com/kb0rb" class="is-accent" target="_blank" rel="noopener">Support KB0RB</a>
       </nav>
@@ -98,15 +98,39 @@
   </header>
 
   <main id="main">
-      <div class="wrap notfound">
-    <p class="code mono">404</p>
-    <h1>Nothing heard</h1>
-    <p class="lead" style="margin-inline:auto">
-      That page isn't on this frequency. Try the home page, or have a look at what I'm building.
-    </p>
-    <p class="btn-row" style="justify-content:center">
-      <a class="btn btn-primary" href="/">Back to home</a>
-      <a class="btn" href="/projects/">Projects</a>
+      <div class="wrap">
+    <header class="page-head">
+      <h1>My Equipment</h1>
+      <p class="lead">A look at the gear I run at the KB0RB station &mdash; HF and VHF/UHF, plus the digital and mesh side of the bench.</p>
+    </header>
+
+    <div class="equipment-grid"><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+  </span>
+        Transceivers
+      </h3>
+      <ul class="tick-list"><li>Yaesu FTM-500D for VHF/UHF</li><li>Icom IC-7300 for HF</li><li>AnyTone DV878II Plus HT for VHF/UHF and DMR</li><li>Baofeng F8HP-Pro HT</li><li>TIDRADIO H3 HT for GMRS</li><li>QRZ-1 Explorer HT</li></ul>
+    </div><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-antenna"/></svg>
+  </span>
+        Antennas &amp; Accessories
+      </h3>
+      <ul class="tick-list"><li>Diamond X-30A antenna for 2m/70cm</li><li>Palomar BAS-71 9:1 unun random wire end fed for HF</li><li>Daiwa CN-901 SWR meter</li><li>Tekpower TP50SW power supply</li><li>Palomar CMNF-500-50 noise filter</li></ul>
+    </div><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg>
+  </span>
+        Digital &amp; Mesh
+      </h3>
+      <ul class="tick-list"><li>HamClock on Synology</li><li>WSJT-X for FT8</li><li>Meshtastic and LoRa devices</li><li>B&amp;O Station G2 with Airframes cavity filter and 10 dBi antenna</li></ul>
+    </div></div>
+
+
+    <p class="btn-row">
+      <a class="btn" href="/contact/">Contact me <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+  </a>
     </p>
   </div>
   </main>

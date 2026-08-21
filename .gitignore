@@ -1,22 +1,9 @@
-# Jekyll build output and caches
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
-
-# Bundler — gems are installed locally into vendor/bundle
-vendor/
-.bundle/
+# macOS
+.DS_Store
+._*
 
 # Editor and tooling config that is specific to one machine
 .vscode/
 .idea/
 .claude/
 *.swp
-
-# macOS
-.DS_Store
-._*
-
-# Leftovers from the old Vite/React site
-node_modules/

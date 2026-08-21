@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)">
+
+  <title>AllStar Node Control — Privacy Policy | KB0RB</title>
+  <meta name="description" content="Privacy policy for the AllStar Node Control iOS app. No data collection, no analytics, no accounts — all data stays on your device.">
+  <link rel="canonical" href="https://kb0rb.net/projects/allstar-node-control/privacy/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KB0RB">
+  <meta property="og:title" content="AllStar Node Control — Privacy Policy">
+  <meta property="og:description" content="Privacy policy for the AllStar Node Control iOS app. No data collection, no analytics, no accounts — all data stays on your device.">
+  <meta property="og:url" content="https://kb0rb.net/projects/allstar-node-control/privacy/">
+  <meta property="og:image" content="https://kb0rb.net/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AllStar Node Control — Privacy Policy">
+  <meta name="twitter:description" content="Privacy policy for the AllStar Node Control iOS app. No data collection, no analytics, no accounts — all data stays on your device.">
+  <meta name="twitter:image" content="https://kb0rb.net/assets/img/og-image.jpg">
+
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script>
+    // Set the theme before first paint so there is no flash of the wrong colours.
+    (function () {
+      try {
+        var stored = localStorage.getItem('kb0rb-theme');
+        document.documentElement.dataset.theme =
+          stored === 'light' || stored === 'dark' ? stored : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite. Referenced below with <use href="#i-name">. Identical on
+       every page; if you add an icon, add it here and in the other pages. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <defs>
+    <symbol id="i-antenna" viewBox="0 0 24 24"><path d="M2 12 7 2M7 12l5-10M12 12l5-10M17 12l5-10M4.5 7h15M12 16v6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14M7.76 16.24a6 6 0 0 1 0-8.48M16.24 7.76a6 6 0 0 1 0 8.48M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 20v-4M9 20V10M15 20V5M21 20V2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <svg class="icon brand-icon" aria-hidden="true" focusable="false"><use href="#i-signal"/></svg>
+        <span class="brand-call">KB0RB</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/projects/" class="is-active" aria-current="page">Projects</a>
+        <a href="/equipment/">Equipment</a>
+        <a href="/contact/">Contact</a>
+        <a href="https://ko-fi.com/kb0rb" class="is-accent" target="_blank" rel="noopener">Support KB0RB</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon theme-icon-dark" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon-light" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <svg class="icon nav-icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+          <svg class="icon nav-icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+      <div class="wrap"><p class="breadcrumb">
+      <a href="/projects/">Projects</a> <span>/</span>
+      <a href="/projects/allstar-node-control/">AllStar Node Control</a> <span>/</span>
+      Privacy Policy
+    </p><header class="page-head">
+      <h1>AllStar Node Control — Privacy Policy</h1><p class="lead">AllStar Node Control does not collect, transmit or sell your personal information. Everything the app knows about you stays on your device.</p><p class="effective">Effective August 11, 2026</p></header>
+
+    <div class="prose prose-legal">
+      <div class="callout">
+    <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>
+
+    <div>
+      <p><strong>The short version.</strong> AllStar Node Control has no accounts, no
+      servers of mine, no analytics and no advertising. The app runs entirely on your
+      device and talks only to the nodes and services you point it at. I never see your
+      data.</p>
+    </div>
+  </div>
+
+  <p>This policy explains how the AllStar Node Control app for iPhone and iPad (“the app”)
+  handles information. The app is developed and published by Jon Schulman, KB0RB (“I”,
+  “me”), an independent developer.</p>
+
+  <h2 id="information-i-collect">Information I collect</h2>
+
+  <p><strong>None.</strong> I operate no servers, no accounts and no back end for this app. I do not
+  collect, receive, store, sell, rent or share any personal information about you, your
+  device or your use of the app.</p>
+
+  <p>In Apple’s App Privacy terms, the app’s data collection is declared as
+  <strong>Data Not Collected</strong>.</p>
+
+  <h2 id="information-stored-on-your-device">Information stored on your device</h2>
+
+  <p>To do its job, the app stores the settings you enter. This information is kept on your
+  device only:</p>
+
+  <ul>
+    <li><strong>Node connection details</strong> — the hostname or IP address, port number and any
+  username, password or credentials you enter for each node you configure.</li>
+    <li><strong>Saved and favourite nodes</strong> — the list of nodes you have added, and any labels or
+  ordering you give them.</li>
+    <li><strong>App preferences</strong> — display options and other settings you choose.</li>
+  </ul>
+
+  <p>Credentials are held in the iOS Keychain, and other settings in the app’s own private
+  storage. Neither is readable by other apps.</p>
+
+  <p>If you have iCloud Backup enabled for your device, this data may be included in your
+  personal encrypted iCloud backup. That backup belongs to your Apple Account; it is not
+  accessible to me.</p>
+
+  <p><strong>Deleting the app deletes this data</strong> from your device.</p>
+
+  <h2 id="network-connections-the-app-makes">Network connections the app makes</h2>
+
+  <p>The app connects only where you direct it:</p>
+
+  <ul>
+    <li><strong>Your nodes.</strong> When you operate a node, the app connects directly from your device
+  to the address you configured for that node, using the credentials you supplied.
+  Nothing is relayed through any service of mine.</li>
+    <li><strong>AllStarLink services.</strong> If you use a feature that looks up node information, the
+  app queries AllStarLink’s public services directly from your device. Those queries
+  are subject to AllStarLink’s own privacy practices. AllStar Node Control is not
+  affiliated with or endorsed by AllStarLink, Inc.</li>
+  </ul>
+
+  <p>Whether a connection to your node is encrypted depends on how that node is configured;
+  the app cannot add encryption to a protocol that does not support it. If you reach your
+  node across the public internet, use a VPN or another secure tunnel rather than exposing
+  the node’s management port.</p>
+
+  <h2 id="analytics-tracking-and-advertising">Analytics, tracking and advertising</h2>
+
+  <p>The app contains <strong>no</strong> analytics, <strong>no</strong> crash-reporting services, <strong>no</strong> advertising
+  and <strong>no</strong> third-party tracking SDKs. It does not track you across apps or websites,
+  and there is no in-app purchase or subscription data to collect.</p>
+
+  <h2 id="diagnostics-you-may-choose-to-share-with-apple">Diagnostics you may choose to share with Apple</h2>
+
+  <p>If you have turned on <strong>Share With App Developers</strong> in
+  <em>Settings → Privacy &amp; Security → Analytics &amp; Improvements</em>, Apple may provide me with
+  aggregated crash logs and performance statistics for the app. This is a feature of iOS
+  that you control, and Apple’s reports are anonymised and aggregated before I see them.
+  You can turn it off in Settings at any time.</p>
+
+  <p>Separately, if you download the app from the App Store, Apple handles that transaction
+  and gives me only aggregate sales and territory statistics. Apple’s handling of that
+  information is covered by
+  <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>.</p>
+
+  <h2 id="childrens-privacy">Children’s privacy</h2>
+
+  <p>The app is not directed at children under 13, and since I collect no information at all,
+  I do not knowingly collect information from children.</p>
+
+  <h2 id="your-rights">Your rights</h2>
+
+  <p>Privacy laws including the EU and UK GDPR and the California Consumer Privacy Act give
+  you rights to access, correct, delete and port the personal information a company holds
+  about you, and to opt out of its sale.</p>
+
+  <p>Because I hold no personal information about you, there is nothing for me to produce,
+  correct, delete or sell. You are in full control of the data on your device: you can
+  view and change it inside the app, and remove all of it by deleting the app. I do not
+  sell or share personal information, and never have.</p>
+
+  <h2 id="security">Security</h2>
+
+  <p>Credentials are stored using the iOS Keychain, which is encrypted by the operating
+  system and protected by your device passcode, Face ID or Touch ID. Because your data
+  never leaves your device, there is no account of yours for me to lose. Please protect
+  your device with a passcode, and use strong, unique credentials on your nodes.</p>
+
+  <h2 id="changes-to-this-policy">Changes to this policy</h2>
+
+  <p>If this policy changes, I will post the updated version on this page and change the
+  effective date at the top. Material changes will be noted in the app’s release notes.
+  Earlier versions are available in the
+  <a href="https://github.com/jonnyborbs/kb0rb-net">site’s public repository</a>.</p>
+
+  <h2 id="contact">Contact</h2>
+
+  <p>Questions about this policy, or about privacy in the app, can go to:</p>
+
+  <p><strong>Jon Schulman, KB0RB</strong>
+  <a href="mailto:support@greylineft8.com?subject=AllStar%20Node%20Control%20privacy">support@greylineft8.com</a></p>
+
+    </div>
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="/">
+          <svg class="icon brand-icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+          <span class="brand-call">KB0RB</span>
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/projects/">Projects</a>
+          <a href="/equipment/">Equipment</a>
+          <a href="/contact/">Contact</a>
+          <a href="https://ko-fi.com/kb0rb" class="is-accent" target="_blank" rel="noopener">Support KB0RB</a>
+        </nav>
+
+        <p class="footer-copy">&copy; 2026 Jon / KB0RB</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="memberships">
+          <a href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a><span class="sep">&bull;</span>
+          <a href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club</a><span class="sep">&bull;</span>
+          <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a>
+        </p>
+        <p class="grid-note">QTH Vacaville, California &middot; Grid <span class="mono">CM98aj</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

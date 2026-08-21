@@ -1,8 +1,4 @@
----
-permalink: /robots.txt
-sitemap: false
----
 User-agent: *
 Allow: /
 
-Sitemap: {{ '/sitemap.xml' | absolute_url }}
+Sitemap: https://kb0rb.net/sitemap.xml

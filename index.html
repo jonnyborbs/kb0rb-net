@@ -1,103 +1,354 @@
----
-layout: default
-title: KB0RB
-description: >-
-  Jon (KB0RB), a US Amateur Extra class ham in Vacaville, California — grid CM98aj.
-  Station details, equipment, and the amateur radio software I build.
----
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)">
 
-<div class="wrap">
-  <section class="hero">
-    <div>
-      <span class="eyebrow">{% include icon.html name="signal" %} Amateur Radio Operator</span>
-      <h1>Hi 👋 I'm Jon, <span class="call">(KB0RB)</span></h1>
-      <p class="lead">
-        Based in Vacaville, California, continuing a family tradition of ham radio
-        across generations &mdash; and writing software for it along the way.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#about">Learn More</a>
-        <a class="btn" href="{{ '/projects/' | relative_url }}">My Projects</a>
-        <a class="btn" href="{{ '/equipment/' | relative_url }}">My Equipment</a>
+  <title>KB0RB | Amateur Radio Operator</title>
+  <meta name="description" content="Jon (KB0RB), a US Amateur Extra class ham in Vacaville, California — grid CM98aj. Station details, equipment, and the amateur radio software I build.">
+  <link rel="canonical" href="https://kb0rb.net/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KB0RB">
+  <meta property="og:title" content="KB0RB">
+  <meta property="og:description" content="Jon (KB0RB), a US Amateur Extra class ham in Vacaville, California — grid CM98aj. Station details, equipment, and the amateur radio software I build.">
+  <meta property="og:url" content="https://kb0rb.net/">
+  <meta property="og:image" content="https://kb0rb.net/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KB0RB">
+  <meta name="twitter:description" content="Jon (KB0RB), a US Amateur Extra class ham in Vacaville, California — grid CM98aj. Station details, equipment, and the amateur radio software I build.">
+  <meta name="twitter:image" content="https://kb0rb.net/assets/img/og-image.jpg">
+
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script>
+    // Set the theme before first paint so there is no flash of the wrong colours.
+    (function () {
+      try {
+        var stored = localStorage.getItem('kb0rb-theme');
+        document.documentElement.dataset.theme =
+          stored === 'light' || stored === 'dark' ? stored : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite. Referenced below with <use href="#i-name">. Identical on
+       every page; if you add an icon, add it here and in the other pages. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <defs>
+    <symbol id="i-antenna" viewBox="0 0 24 24"><path d="M2 12 7 2M7 12l5-10M12 12l5-10M17 12l5-10M4.5 7h15M12 16v6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+    <symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14M7.76 16.24a6 6 0 0 1 0-8.48M16.24 7.76a6 6 0 0 1 0 8.48M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 20v-4M9 20V10M15 20V5M21 20V2"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <svg class="icon brand-icon" aria-hidden="true" focusable="false"><use href="#i-signal"/></svg>
+        <span class="brand-call">KB0RB</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="/" class="is-active" aria-current="page">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/equipment/">Equipment</a>
+        <a href="/contact/">Contact</a>
+        <a href="https://ko-fi.com/kb0rb" class="is-accent" target="_blank" rel="noopener">Support KB0RB</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon theme-icon-dark" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon-light" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+        </button>
+        <button type="button" class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <svg class="icon nav-icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+          <svg class="icon nav-icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+      <div class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-signal"/></svg>
+   Amateur Radio Operator</span>
+        <h1>Hi 👋 I'm Jon, <span class="call">(KB0RB)</span></h1>
+        <p class="lead">
+          Based in Vacaville, California, continuing a family tradition of ham radio
+          across generations &mdash; and writing software for it along the way.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#about">Learn More</a>
+          <a class="btn" href="/projects/">My Projects</a>
+          <a class="btn" href="/equipment/">My Equipment</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="/assets/img/station.jpg"
+             alt="Jon (KB0RB) at his ham radio station"
+             width="1600" height="1200">
+      </div>
+    </section>
+
+    <section class="section" id="contact-card">
+      <div class="card">
+    <div class="card-head">
+      <h2>Contact Details</h2>
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+
+    </div>
+    <p class="card-sub">Find me on the airwaves</p>
+
+    <div class="contact-grid"><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+  </span>
+        <div>
+          <span class="label">Amateur (Extra)</span><span class="value mono">KB0RB</span></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-signal"/></svg>
+  </span>
+        <div>
+          <span class="label">GMRS</span><span class="value mono">WSGQ342</span></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg>
+  </span>
+        <div>
+          <span class="label">DMR ID</span><span class="value mono">3213970</span></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-map-pin"/></svg>
+  </span>
+        <div>
+          <span class="label">Grid Square</span><span class="value mono">CM98aj</span></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+  </span>
+        <div>
+          <span class="label">Email</span><a class="value" href="mailto:qso@kb0rb.net">qso@kb0rb.net</a></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </span>
+        <div>
+          <span class="label">QRZ Profile</span><a class="value" href="https://www.qrz.com/db/kb0rb" target="_blank" rel="noopener">KB0RB <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </a></div>
+      </div><div class="contact-item">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </span>
+        <div>
+          <span class="label">WRL Profile</span><a class="value" href="https://app.worldradioleague.com/profile/KB0RB" target="_blank" rel="noopener">KB0RB <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </a></div>
+      </div><div class="contact-item contact-item-wide">
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>
+  </span>
+        <div>
+          <span class="label">Memberships</span>
+          <div class="pill-row"><a class="pill" href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a><a class="pill" href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club</a><a class="pill" href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a></div>
+        </div>
       </div>
     </div>
 
-    <div class="hero-photo">
-      <img src="{{ '/assets/img/station.jpg' | relative_url }}"
-           alt="Jon (KB0RB) at his ham radio station"
-           width="1600" height="1200">
+    <div class="card-foot">
+      <p>I'm always looking to chat with new folks and learn new things &mdash; if you see me, say hi!</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section" id="contact-card">
-    {% include contact-card.html %}
-  </section>
+    </section>
 
-  <section class="section split" id="about">
-    <div class="split-aside">
-      <h2>About Me</h2>
-      <div class="rule"></div>
-      <div class="split-links">
-        <a href="#projects">Projects</a>
-        <a href="#equipment">Equipment</a>
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    <section class="section split" id="about">
+      <div class="split-aside">
+        <h2>About Me</h2>
+        <div class="rule"></div>
+        <div class="split-links">
+          <a href="#projects">Projects</a>
+          <a href="#equipment">Equipment</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          I come from a long line of hams going back generations and am proud to carry on
+          the family tradition, combining technology and communication with the fun of
+          meeting new people. I'm a member of the
+          <a href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a> as well as the
+          <a href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club (VVRC)</a> and
+          <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a>,
+          and got my FCC Amateur Extra in 2025.
+        </p>
+        <p>
+          The hobby is also where most of my software ends up. I build iOS apps for the
+          things I wanted on my own bench &mdash; running FT8 from a phone in the field, and
+          keeping an AllStarLink node under control from wherever I happen to be.
+        </p>
+        <p>
+          I'm always looking to chat with new folks and learn new things, so if you see me,
+          say hi! I send eQSLs and haven't gotten physical ones made yet &mdash; but I hope to soon.
+        </p>
+      </div>
+    </section>
+
+    <section class="section split" id="projects">
+      <div class="split-aside">
+        <h2>Projects</h2>
+        <div class="rule"></div>
+        <div class="split-links">
+          <a href="#about">About Me</a>
+          <a href="#equipment">Equipment</a>
+          <a href="/projects/">All projects</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="lead" style="margin-bottom:1.75rem">
+          Software I write and support, mostly for the radio bench.
+        </p>
+        <div class="project-grid"><div class="card project-card"><img class="app-icon" src="/assets/img/greyline-ft8-icon.png" alt="" width="256" height="256" loading="lazy"><div>
+        <h3>
+          <a href="https://greylineft8.com" target="_blank" rel="noopener">Greyline FT8</a>
+        </h3>
+        <p class="tagline">FT8 and FT4 digital modes for iPhone and iPad</p>
+      </div>
+
+      <p class="summary">A full-featured digital mode app that runs FT8 and FT4 straight from an iPhone or iPad. Features a live waterfall, automated QSO modes, POTA activations, spot maps and logging. All with no heavy laptop in the field.</p><a class="appstore-badge" href="https://apps.apple.com/app/greyline-ft8/id6773455172" target="_blank" rel="noopener"
+     aria-label="Download Greyline FT8 on the App Store">
+    <img class="badge-on-dark" src="/assets/img/download_white.svg"
+         alt="" width="120" height="40">
+    <img class="badge-on-light" src="/assets/img/download_black.svg"
+         alt="" width="120" height="40">
+  </a>
+  <a class="card-cta" href="https://greylineft8.com" target="_blank" rel="noopener">Visit greylineft8.com <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </a>
+    </div><div class="card project-card"><img class="app-icon" src="/assets/img/node-control-icon.png" alt="" width="256" height="256" loading="lazy"><div>
+        <h3>
+          <a href="/projects/allstar-node-control/">AllStar Node Control</a>
+        </h3>
+        <p class="tagline">Manage your AllStarLink node from your pocket</p>
+      </div>
+
+      <p class="summary">An iOS app for operating your AllStarLink nodes. Node Control lets you connect and  disconnect links, watch node status, and keep your favourite nodes a tap away. Configure custom node macros and so much more.</p><p class="tag-row"><span class="tag tag-status">Coming soon to the App Store</span></p><a class="card-cta" href="/projects/allstar-node-control/">Read more <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+  </a>
+    </div><div class="card project-card"><img class="app-icon" src="/assets/img/wine-at-home-icon.png" alt="" width="256" height="256" loading="lazy"><div>
+        <h3>
+          <a href="https://wehavewineathome.app" target="_blank" rel="noopener">We Have Wine at Home!</a>
+        </h3>
+        <p class="tagline">A visual cellar for the wine, beer and spirits you already own</p>
+      </div>
+
+      <p class="summary">An iPhone and iPad app for cataloguing your home bar collection. Create and  configure virtual wine cellars, add photos, track styles, quantities, locations,  prices and more. CSV import and export keeps you in control of your data. Fully free.  No accounts, no ads, no subscriptions.</p><a class="appstore-badge" href="https://apps.apple.com/app/we-have-wine-at-home/id6775716751" target="_blank" rel="noopener"
+     aria-label="Download We Have Wine at Home! on the App Store">
+    <img class="badge-on-dark" src="/assets/img/download_white.svg"
+         alt="" width="120" height="40">
+    <img class="badge-on-light" src="/assets/img/download_black.svg"
+         alt="" width="120" height="40">
+  </a>
+  <a class="card-cta" href="https://wehavewineathome.app" target="_blank" rel="noopener">Visit wehavewineathome.app <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external-link"/></svg>
+  </a>
+    </div></div>
+
+      </div>
+    </section>
+
+    <section class="section split" id="equipment">
+      <div class="split-aside">
+        <h2>My Equipment</h2>
+        <div class="rule"></div>
+        <div class="split-links">
+          <a href="#about">About Me</a>
+          <a href="#projects">Projects</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="equipment-grid"><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+  </span>
+        Transceivers
+      </h3>
+      <ul class="tick-list"><li>Yaesu FTM-500D for VHF/UHF</li><li>Icom IC-7300 for HF</li><li>AnyTone DV878II Plus HT for VHF/UHF and DMR</li><li>Baofeng F8HP-Pro HT</li><li>TIDRADIO H3 HT for GMRS</li><li>QRZ-1 Explorer HT</li></ul>
+    </div><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-antenna"/></svg>
+  </span>
+        Antennas & Accessories
+      </h3>
+      <ul class="tick-list"><li>Diamond X-30A antenna for 2m/70cm</li><li>Palomar BAS-71 9:1 unun random wire end fed for HF</li><li>Daiwa CN-901 SWR meter</li><li>Tekpower TP50SW power supply</li><li>Palomar CMNF-500-50 noise filter</li></ul>
+    </div><div class="card card-pad equipment-card">
+      <h3>
+        <span class="bubble"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-cpu"/></svg>
+  </span>
+        Digital & Mesh
+      </h3>
+      <ul class="tick-list"><li>HamClock on Synology</li><li>WSJT-X for FT8</li><li>Meshtastic and LoRa devices</li><li>B&O Station G2 with Airframes cavity filter and 10 dBi antenna</li></ul>
+    </div></div>
+
+      </div>
+    </section>
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="/">
+          <svg class="icon brand-icon" aria-hidden="true" focusable="false"><use href="#i-radio"/></svg>
+          <span class="brand-call">KB0RB</span>
+        </a>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="/projects/">Projects</a>
+          <a href="/equipment/">Equipment</a>
+          <a href="/contact/">Contact</a>
+          <a href="https://ko-fi.com/kb0rb" class="is-accent" target="_blank" rel="noopener">Support KB0RB</a>
+        </nav>
+
+        <p class="footer-copy">&copy; 2026 Jon / KB0RB</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="memberships">
+          <a href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a><span class="sep">&bull;</span>
+          <a href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club</a><span class="sep">&bull;</span>
+          <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a>
+        </p>
+        <p class="grid-note">QTH Vacaville, California &middot; Grid <span class="mono">CM98aj</span></p>
       </div>
     </div>
+  </footer>
 
-    <div class="prose">
-      <p>
-        I come from a long line of hams going back generations and am proud to carry on
-        the family tradition, combining technology and communication with the fun of
-        meeting new people. I'm a member of the
-        <a href="https://www.arrl.org" target="_blank" rel="noopener">ARRL</a> as well as the
-        <a href="https://w6vvr.net" target="_blank" rel="noopener">Vaca Valley Radio Club (VVRC)</a> and
-        <a href="https://www.sacvalleymesh.com" target="_blank" rel="noopener">Sac Valley Mesh</a>,
-        and got my FCC Amateur Extra in 2025.
-      </p>
-      <p>
-        The hobby is also where most of my software ends up. I build iOS apps for the
-        things I wanted on my own bench &mdash; running FT8 from a phone in the field, and
-        keeping an AllStarLink node under control from wherever I happen to be.
-      </p>
-      <p>
-        I'm always looking to chat with new folks and learn new things, so if you see me,
-        say hi! I send eQSLs and haven't gotten physical ones made yet &mdash; but I hope to soon.
-      </p>
-    </div>
-  </section>
-
-  <section class="section split" id="projects">
-    <div class="split-aside">
-      <h2>Projects</h2>
-      <div class="rule"></div>
-      <div class="split-links">
-        <a href="#about">About Me</a>
-        <a href="#equipment">Equipment</a>
-        <a href="{{ '/projects/' | relative_url }}">All projects</a>
-      </div>
-    </div>
-
-    <div>
-      <p class="lead" style="margin-bottom:1.75rem">
-        Software I write and support, mostly for the radio bench.
-      </p>
-      {% include project-cards.html %}
-    </div>
-  </section>
-
-  <section class="section split" id="equipment">
-    <div class="split-aside">
-      <h2>My Equipment</h2>
-      <div class="rule"></div>
-      <div class="split-links">
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      </div>
-    </div>
-
-    <div>
-      {% include equipment-grid.html %}
-    </div>
-  </section>
-</div>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

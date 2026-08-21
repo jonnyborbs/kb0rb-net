@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-maintained. Add a <url> here when you add a page. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kb0rb.net/</loc>
+  </url>
+  <url>
+    <loc>https://kb0rb.net/projects/</loc>
+  </url>
+  <url>
+    <loc>https://kb0rb.net/projects/allstar-node-control/</loc>
+  </url>
+  <url>
+    <loc>https://kb0rb.net/projects/allstar-node-control/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://kb0rb.net/equipment/</loc>
+  </url>
+  <url>
+    <loc>https://kb0rb.net/contact/</loc>
+  </url>
+</urlset>
