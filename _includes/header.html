@@ -7,19 +7,31 @@
 
     <nav class="nav" id="nav" aria-label="Main">
       {%- for item in site.data.nav -%}
-        {%- assign url = item.url | relative_url -%}
         {%- comment -%}
           Liquid's `assign` cannot hold a comparison, so each branch has to set
           the flag itself. Home only matches the root exactly; every other item
-          matches its own section and anything nested under it.
+          matches its own section and anything nested under it. Items pointing
+          off-site are never "the current page".
         {%- endcomment -%}
         {%- assign active = false -%}
-        {%- if item.url == "/" -%}
-          {%- if page.url == "/" -%}{%- assign active = true -%}{%- endif -%}
-        {%- elsif page.url contains item.url -%}
-          {%- assign active = true -%}
+        {%- if item.external -%}
+          {%- assign url = item.url -%}
+        {%- else -%}
+          {%- assign url = item.url | relative_url -%}
+          {%- if item.url == "/" -%}
+            {%- if page.url == "/" -%}{%- assign active = true -%}{%- endif -%}
+          {%- elsif page.url contains item.url -%}
+            {%- assign active = true -%}
+          {%- endif -%}
         {%- endif -%}
-        <a href="{{ url }}"{% if active %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- assign classes = "" -%}
+        {%- if active -%}{%- assign classes = classes | append: " is-active" -%}{%- endif -%}
+        {%- if item.accent -%}{%- assign classes = classes | append: " is-accent" -%}{%- endif -%}
+        {%- assign classes = classes | strip -%}
+        <a href="{{ url }}"
+           {%- if classes != "" %} class="{{ classes }}"{% endif %}
+           {%- if active %} aria-current="page"{% endif %}
+           {%- if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
       {%- endfor -%}
     </nav>
 

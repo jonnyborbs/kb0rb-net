@@ -184,6 +184,16 @@ main { padding-bottom: 5rem; }
 }
 .nav a:hover { color: hsl(var(--primary)); }
 .nav a.is-active { color: hsl(var(--foreground)); }
+
+/* Calls to action in the nav — accent coloured, and deliberately without the
+   is-active underline so they don't read as a location on this site. */
+.nav a.is-accent,
+.footer-nav a.is-accent {
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+.nav a.is-accent:hover,
+.footer-nav a.is-accent:hover { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 4px; }
 .nav a.is-active::after {
   content: "";
   position: absolute;
@@ -230,7 +240,9 @@ main { padding-bottom: 5rem; }
   .nav.is-open { display: flex; }
   .nav a { padding: .75rem 0; border-bottom: 1px solid hsl(var(--border)); }
   .nav a:last-child { border-bottom: 0; }
-  .nav a.is-active { color: hsl(var(--primary)); font-weight: 500; }
+  /* The underline can't carry the active state in the stacked menu, so weight
+     does. Accent colour stays reserved for calls to action. */
+  .nav a.is-active { color: hsl(var(--foreground)); font-weight: 600; }
   .nav a.is-active::after { display: none; }
   .nav-toggle[aria-expanded="true"] .nav-icon-open { display: none; }
   .nav-toggle[aria-expanded="true"] .nav-icon-close { display: block; }
@@ -562,7 +574,29 @@ a.value .icon { width: .85rem; height: .85rem; opacity: .7; }
 }
 [data-theme="dark"] .appstore-badge .badge-on-light,
 [data-theme="light"] .appstore-badge .badge-on-dark { display: none; }
-.project-head .appstore-badge { margin-top: .35rem; }
+/* Badges and the status pill sit on one line, aligned on their centres. The
+   Ko-fi badge is a different aspect ratio to Apple's, so match the 2.5rem
+   height the App Store badge and .btn share and let width follow — forcing
+   equal widths would distort it. */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .9rem;
+}
+
+.kofi-badge {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 8px;
+  transition: opacity .15s ease;
+}
+.kofi-badge:hover { opacity: .85; }
+.kofi-badge img {
+  height: 2.5rem;
+  width: auto;
+}
 
 /* --- page heads, breadcrumbs, prose --------------------------------------- */
 

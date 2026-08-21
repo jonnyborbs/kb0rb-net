@@ -14,11 +14,19 @@ layout: default
     <div>
       <h1>{{ project.name | default: page.title }}</h1>
       {%- if project.tagline %}<p class="lead">{{ project.tagline }}</p>{% endif -%}
-      {%- if project.appstore -%}
-        {% include appstore-badge.html url=project.appstore name=project.name %}
-      {%- elsif project.status -%}
-        <p class="tag-row"><span class="tag tag-status">{{ project.status }}</span></p>
-      {%- endif -%}
+      <div class="badge-row">
+        {%- if project.appstore -%}
+          {% include appstore-badge.html url=project.appstore name=project.name %}
+        {%- elsif project.status -%}
+          <span class="tag tag-status">{{ project.status }}</span>
+        {%- endif -%}
+        {%- if project.kofi -%}
+          <a class="kofi-badge" href="{{ project.kofi }}" target="_blank" rel="noopener">
+            <img src="{{ '/assets/img/support_me_on_kofi_badge_red.png' | relative_url }}"
+                 alt="Support {{ project.name }} on Ko-Fi" width="672" height="356">
+          </a>
+        {%- endif -%}
+      </div>
     </div>
   </header>
 
